@@ -1,22 +1,32 @@
-import { InteriorOptions } from "./Interior.js"
-import { Orders } from "./Orders.js"
-import { PaintColorOptions } from "./PaintColor.js"
-import { PlaceOrder } from "./PlaceOrder.js"
-import { TechOptions } from "./Technology.js"
-import { WheelOptions } from "./Wheels.js"
+import { InteriorOptions } from "./Interior.js";
+import { Orders } from "./Orders.js";
+import { PaintColorOptions } from "./PaintColor.js";
+import { PlaceOrder } from "./PlaceOrder.js";
+import { TechOptions } from "./Technology.js";
+import { VehicleTypeOptions } from "./VehicleType.js";
+import { WheelOptions } from "./Wheels.js";
 
-const render = async() => {
-    const paintColorsHTML = await PaintColorOptions()
-    const interiorHTML = await InteriorOptions()
-    const techHTML = await TechOptions()
-    const wheelHTML = await WheelOptions()
-    const buttonHTML = await PlaceOrder()
-    const ordersHTML = await Orders()
+const render = async () => {
+  const vehicleTypesHTML = await VehicleTypeOptions();
+  const paintColorsHTML = await PaintColorOptions();
+  const interiorHTML = await InteriorOptions();
+  const techHTML = await TechOptions();
+  const wheelHTML = await WheelOptions();
+  const buttonHTML = await PlaceOrder();
+  const ordersHTML = await Orders();
 
-    const composedHTML = `
+  const composedHTML = `
         <h1>Cars-R-Us</h1>
 
         <article class="choices">
+
+
+            <section class="choices__vehicleType options">
+                <h2>Vehicle Types</h2>
+                ${vehicleTypesHTML}
+
+            </section>
+
             <section class="choices__paintColor options">
                 <h2>Paint Colors</h2>
                 ${paintColorsHTML} 
@@ -52,14 +62,14 @@ const render = async() => {
 
 
         </article>
-    `
-    const container = document.querySelector("#container")
-    container.innerHTML = composedHTML
-}
+    `;
+  const container = document.querySelector("#container");
+  container.innerHTML = composedHTML;
+};
 
-render()
+render();
 
-document.addEventListener("newOrder", event => {
-    console.log("State of data has changed. Regenerating HTML...")
-    render()
-})
+document.addEventListener("newOrder", (event) => {
+  console.log("State of data has changed. Regenerating HTML...");
+  render();
+});
