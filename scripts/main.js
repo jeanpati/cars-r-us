@@ -3,9 +3,11 @@ import { Orders } from "./Orders.js";
 import { PaintColorOptions } from "./PaintColor.js";
 import { PlaceOrder } from "./PlaceOrder.js";
 import { TechOptions } from "./Technology.js";
+import { VehicleTypeOptions } from "./VehicleType.js";
 import { WheelOptions } from "./Wheels.js";
 
 const render = async () => {
+  const vehicleTypesHTML = await VehicleTypeOptions();
   const paintColorsHTML = await PaintColorOptions();
   const interiorHTML = await InteriorOptions();
   const techHTML = await TechOptions();
@@ -21,6 +23,7 @@ const render = async () => {
 
             <section class="choices__vehicleType options">
                 <h2>Vehicle Types</h2>
+                ${vehicleTypesHTML}
 
             </section>
 
