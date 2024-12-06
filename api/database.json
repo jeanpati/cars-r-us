@@ -1,8 +1,17 @@
 {
   "vehicleTypes": [
-    { "id": 1, "name": "Car" },
-    { "id": 2, "name": "SUV" },
-    { "id": 3, "name": "Truck" }
+    {
+      "id": 1,
+      "name": "Car"
+    },
+    {
+      "id": 2,
+      "name": "SUV"
+    },
+    {
+      "id": 3,
+      "name": "Truck"
+    }
   ],
   "paintColors": [
     {
@@ -94,46 +103,28 @@
   ],
   "orders": [
     {
-      "paintColorId": 2,
-      "interiorId": 1,
-      "techId": 1,
-      "wheelId": 3,
-      "id": 1
-    },
-    {
-      "paintColorId": 4,
-      "interiorId": 4,
-      "techId": 4,
-      "wheelId": 3,
-      "id": 2
-    },
-    {
-      "paintColorId": 2,
-      "interiorId": 1,
-      "techId": 4,
-      "wheelId": 1,
-      "id": 3
-    },
-    {
-      "paintColorId": 2,
-      "interiorId": 4,
-      "techId": 4,
-      "wheelId": 1,
-      "id": 4
-    },
-    {
+      "id": "0252",
+      "vehicleTypeId": 1,
       "paintColorId": 1,
       "interiorId": 1,
-      "techId": 4,
-      "wheelId": 1,
-      "id": 5
+      "techId": 1,
+      "wheelId": 1
     },
     {
-      "paintColorId": 3,
-      "interiorId": 4,
-      "techId": 2,
-      "wheelId": 3,
-      "id": 6
+      "id": "7da4",
+      "vehicleTypeId": 2,
+      "paintColorId": 1,
+      "interiorId": 1,
+      "techId": 1,
+      "wheelId": 1
+    },
+    {
+      "id": "9beb",
+      "vehicleTypeId": 3,
+      "paintColorId": 1,
+      "interiorId": 1,
+      "techId": 1,
+      "wheelId": 1
     }
   ]
 }

@@ -33,7 +33,16 @@ export const Orders = async () => {
       (tech) => Number(tech.id) === order.techId
     )?.price;
 
-    const orderPrice = paintColorPrice + interiorPrice + wheelPrice + techPrice;
+    let orderPrice = paintColorPrice + interiorPrice + wheelPrice + techPrice;
+    console.log(order.vehicleTypeId);
+
+    if (order.vehicleTypeId === 2) {
+      orderPrice =
+        (paintColorPrice + interiorPrice + wheelPrice + techPrice) * 1.5;
+    } else if (order.vehicleTypeId === 3) {
+      orderPrice =
+        (paintColorPrice + interiorPrice + wheelPrice + techPrice) * 2.25;
+    }
 
     // To automatically format the number as currency
     const USD = orderPrice.toLocaleString("en-US", {
