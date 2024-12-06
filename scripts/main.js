@@ -22,7 +22,6 @@ const render = async () => {
             <section class="choices__vehicleType options">
                 <h2>Vehicle Types</h2>
 
-
             </section>
 
             <section class="choices__paintColor options">
